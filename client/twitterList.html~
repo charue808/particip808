@@ -1,0 +1,67 @@
+<head>
+  <title>Tweet Me</title>
+		<style type="text/css">
+			.span6 {
+				margin-left: 240px; }
+		</style>
+</head>
+
+<body>
+ <div class="header">
+   <img src="/image/Proaction_Cafe_v1.png"/>
+	
+ </div>
+  <div class="container">
+      {{> content}}
+  </div>
+</body>
+
+<template name="content">
+    <div class="row">
+      <div class="span6">
+        <div class="well">
+	{{#if currentUser}}
+	   <h4>Thanks! You've been added. </h4>
+
+        {{else}}
+
+	   <h4>Sign in with twitter if you attended the second <a href="http://www.eventbrite.com/e/pro-action-cafe-collaborative-feedback-for-entrepreneurs-project-leaders-tickets-12592242737?aff=eorg">Pro Action Cafe</a></h4>
+	{{> loginButtons}}
+        
+        {{/if}}
+	</div>
+	<table class="table">
+	{{# each users}}
+	  {{> user}}
+        {{/each}}
+     </table>
+     </div>
+      <div class="span12" id="footer">
+       Built by <a href="http://twitter.com/thestarfoundry">@thestarfoundry</a>
+	   Brought to you by <a href="http://twitter.com/protohubhnl">@ProtoHUB</a>
+       inspired by <a href="http://twitter.com/SachaGreif">@SachaGreif</a> <br />
+	   The Star Foundry: Countdown to Launch <a class="btn btn-success" href="http://thestarfoundry.com">Sign Up Today!</a>
+       
+      </div>
+
+    </div>
+
+</template>
+
+<template name="user">
+<tr>
+  <td>
+    <a target="blank" href="http://twitter.com/{{services.twitter.screenName}}"><img src="{{services.twitter.profile_image_url}}"/> {{profile.name}}</a>
+    
+   
+    <iframe allow transparency="true" frameborder="0" scrolling="no"
+      src="//platform.twitter.com/widgets/follow_button.html?screen_name={{services.twitter.screenName}}"
+      style="width:300px; height:20px;"></iframe>
+
+
+ 
+  </td>
+</tr>
+</template>
+
+
