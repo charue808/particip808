@@ -1,31 +1,34 @@
 <head>
-  <title>Tweet Me</title>
-		<style type="text/css">
-			.span6 {
-				margin-left: 240px; }
-		</style>
+  <title>Follow Me!</title>
+  <meta name="viewport" content="width=device-width, intial-scale=1", maximum-scale=1, user-scalable=no">		
 </head>
 
 <body>
- <div class="header">
-   <img src="/image/Proaction_Cafe_v1.png"/>
-	
- </div>
-  <div class="container">
-      {{> content}}
+	<div class="col-md-6 col-md-offset-3">
+		<img src="/image/FollowMEv1.png" class="img-responsive" alt="Responsive image"/>
+	</div>
+	<div class="container">
+	  <div class="col-xs-6">
+      {{> twitter}}
+	  </div>
+	 </div>
+	<div class="container">
+	 <div class="col-xs-6">
+		
+	 </div>
   </div>
 </body>
 
-<template name="content">
+<template name="twitter">
     <div class="row">
-      <div class="span6">
+      <div class="col-md-6 col-md-offset-3">
         <div class="well">
 	{{#if currentUser}}
 	   <h4>Thanks! You've been added. </h4>
 
         {{else}}
 
-	   <h4>Sign in with twitter if you attended the second <a href="http://www.eventbrite.com/e/pro-action-cafe-collaborative-feedback-for-entrepreneurs-project-leaders-tickets-12592242737?aff=eorg">Pro Action Cafe</a></h4>
+	   <h4>Sign in here to make it easy for fellow ProAction Cafe goers to follow you on Twitter!</h4>
 	{{> loginButtons}}
         
         {{/if}}
@@ -36,32 +39,38 @@
         {{/each}}
      </table>
      </div>
-      <div class="span12" id="footer">
-       Built by <a href="http://twitter.com/thestarfoundry">@thestarfoundry</a>
-	   Brought to you by <a href="http://twitter.com/protohubhnl">@ProtoHUB</a>
-       inspired by <a href="http://twitter.com/SachaGreif">@SachaGreif</a> <br />
-	   The Star Foundry: Countdown to Launch <a class="btn btn-success" href="http://thestarfoundry.com">Sign Up Today!</a>
-       
-      </div>
-
+	
+	<div class="text-center"> 
+      <div class="col-md-6 col-md-offset-3"> <hr />
+	   <h5><small><p class="text-justify">Brought to you by <a href="http://twitter.com/protohubhnl">@ProtoHUB</a>,
+       inspired by <a href="http://twitter.com/SachaGreif">@SachaGreif</a>,
+	   built by <a href="http://twitter.com/thestarfoundry">@TheStarFoundry</a>
+		<br /><br />
+	   </p></small></h5>
+	  </div>
+	 </div>
+	 
+	  <div class="col-md-6 col-md-offset-3">
+	 	<div class="well">
+	  <p class="text-justify">Learn how to launch your own web application at our <b>FREE</b> ProtoHUB Pau Hana: <a target="_blank" class="btn btn-success" href="https://www.eventbrite.com/e/countdown-to-launch-the-star-foundry-tickets-12660633295">Sign Up Here!</a></p>
+	  </div>
+	</div>
     </div>
-
 </template>
 
 <template name="user">
+<table class="table">
 <tr>
   <td>
     <a target="blank" href="http://twitter.com/{{services.twitter.screenName}}"><img src="{{services.twitter.profile_image_url}}"/> {{profile.name}}</a>
     
-   
-    <iframe allow transparency="true" frameborder="0" scrolling="no"
-      src="//platform.twitter.com/widgets/follow_button.html?screen_name={{services.twitter.screenName}}"
-      style="width:300px; height:20px;"></iframe>
-
+	
+   <iframe style ="width: 300px; height: 20px;" src="//platform.twitter.com/widgets/follow_button.html?screen_name={{services.twitter.screenName}}" height="240" width="320" frameborder="0" scrolling="no"></iframe>
 
  
   </td>
 </tr>
+</table>
 </template>
 
 

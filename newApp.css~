@@ -3,6 +3,7 @@
 body {
 	padding-top: 10px;
 }
+
 .header {
 	margin: 0px auto 10px auto;
 	text-align: center;
@@ -10,7 +11,7 @@ body {
 }
 
 .container{
-	margin: 10px auto 10px auto;
+	margin: 5px auto 10px auto;
   	text-align: center;
 }
 
@@ -21,6 +22,15 @@ body {
 	position: relative;
 	margin-bottom: 10px;
 }
+
+.table td>a {
+	width: 98px;
+}
+	
+
+
+
+
 
 
 
